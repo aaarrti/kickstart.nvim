@@ -3,21 +3,34 @@ return { -- Highlight, edit, and navigate code
   build = ':TSUpdate',
   opts = {
     ensure_installed = {
-      'bash',
-      'c',
-      'html',
-      'lua',
-      'luadoc',
-      'markdown',
+      -- vim
       'vim',
       'vimdoc',
+      'lua',
+      'luadoc',
+      -- web
       'html',
-      'rust',
+      'css',
       'javascript',
+      'typescript',
+      'tsx',
+      --
       'python',
       'go',
-      'javascript',
+      'rust',
+      --
+      'c',
+      'cpp',
+      'cmake',
+      'cuda',
+      --
+      'markdown',
+      'markdown_inline',
       'yaml',
+      'toml',
+      'bash',
+      'dockerfile',
+      'terraform',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
