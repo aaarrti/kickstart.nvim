@@ -196,6 +196,9 @@ return {
 
         tsserver = {
           settings = {
+            completions = {
+              completeFunctionCalls = true,
+            },
             typescript = {
               inlayHints = {
                 -- taken from https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration
