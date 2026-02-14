@@ -16,7 +16,6 @@ return { -- Highlight, edit, and navigate code
       'tsx',
       --
       'python',
-      'go',
       'rust',
       --
       'c',
@@ -31,6 +30,7 @@ return { -- Highlight, edit, and navigate code
       'bash',
       'dockerfile',
       'terraform',
+      'just',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

@@ -134,8 +134,7 @@ return {
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
       local servers = {
-        -- clangd = {},
-        gopls = {},
+        clangd = {},
         pyright = {},
         rust_analyzer = {
           opts = {
