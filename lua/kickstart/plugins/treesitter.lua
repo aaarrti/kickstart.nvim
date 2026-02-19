@@ -9,11 +9,11 @@ return { -- Highlight, edit, and navigate code
       'lua',
       'luadoc',
       -- web
-      'html',
-      'css',
-      'javascript',
-      'typescript',
-      'tsx',
+      -- 'html',
+      -- 'css',
+      -- 'javascript',
+      -- 'typescript',
+      -- 'tsx',
       --
       'python',
       'rust',
