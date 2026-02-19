@@ -135,7 +135,11 @@ return {
       -- But for many setups, the LSP (`tsserver`) will work just fine
       local servers = {
         clangd = {},
-        pyright = {},
+        basedpyright = {
+          analysis = {
+            diagnosticMode = "openFilesOnly"
+          }
+        },
         rust_analyzer = {
           opts = {
             -- automatically set inlay hints (type hints)

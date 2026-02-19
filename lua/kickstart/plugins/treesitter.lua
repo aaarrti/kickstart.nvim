@@ -4,8 +4,8 @@ return { -- Highlight, edit, and navigate code
   opts = {
     ensure_installed = {
       -- vim
-      'vim',
-      'vimdoc',
+      -- 'vim',
+      -- 'vimdoc',
       'lua',
       'luadoc',
       -- web
@@ -21,15 +21,15 @@ return { -- Highlight, edit, and navigate code
       'c',
       'cpp',
       'cmake',
-      'cuda',
+      -- 'cuda',
       --
       'markdown',
       'markdown_inline',
       'yaml',
       'toml',
       'bash',
-      'dockerfile',
-      'terraform',
+      -- 'dockerfile',
+      -- 'terraform',
       'just',
       'java',
     },
@@ -48,6 +48,12 @@ return { -- Highlight, edit, and navigate code
     -- Prefer git instead of curl in order to improve connectivity in some environments
     require('nvim-treesitter.install').prefer_git = true
     ---@diagnostic disable-next-line: missing-fields
+    local ok, ts = pcall(require, 'nvim-treesitter')
+    if ok then
+      ts.setup(opts)
+      return
+    end
+    -- Backward compatibility for older nvim-treesitter releases.
     require('nvim-treesitter.configs').setup(opts)
 
     -- There are additional nvim-treesitter modules that you can use to interact
