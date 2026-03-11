@@ -1,21 +1,20 @@
 return {
   'nvim-java/nvim-java',
   config = function()
-    require('java').setup({
+    require('java').setup {
       lombok = {
-        enable = true
+        enable = true,
       },
       java_test = {
-        enable = false
+        enable = false,
       },
       java_debug_adapter = {
-        enable = false
+        enable = false,
       },
       jdk = {
-        auto_install = false
+        auto_install = false,
       },
-
-    })
-    vim.lsp.enable('jdtls')
+    }
+    vim.lsp.enable 'jdtls'
   end,
 }

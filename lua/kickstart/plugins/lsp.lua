@@ -11,6 +11,7 @@ return {
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { 'folke/neodev.nvim', opts = {} },
+      'b0o/schemastore.nvim',
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
@@ -106,7 +107,7 @@ return {
         group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
         callback = function(event)
           vim.lsp.buf.clear_references()
-          vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event.buf }
+          pcall(vim.api.nvim_clear_autocmds, { group = 'kickstart-lsp-highlight', buffer = event.buf })
         end,
       })
 
@@ -137,8 +138,8 @@ return {
         clangd = {},
         basedpyright = {
           analysis = {
-            diagnosticMode = "openFilesOnly"
-          }
+            diagnosticMode = 'openFilesOnly',
+          },
         },
         rust_analyzer = {
           opts = {
@@ -249,6 +250,22 @@ return {
               hint = {
                 enabled = true,
               },
+            },
+          },
+        },
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
+        yamlls = {
+          settings = {
+            yaml = {
+              schemaStore = { enable = false, url = '' },
+              schemas = require('schemastore').yaml.schemas(),
             },
           },
         },

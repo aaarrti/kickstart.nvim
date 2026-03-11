@@ -170,13 +170,14 @@ require('lazy').setup({
   require 'kickstart.plugins.nvim-cmp',
   require 'kickstart.plugins.theme',
   require 'kickstart.plugins.treesitter',
+  require 'kickstart.plugins.jsonschema',
   require 'kickstart.plugins.lsp',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.markdown-preview',
   require 'kickstart.plugins.harpoon',
-  require 'kickstart.plugins.nvim-java'
+  require 'kickstart.plugins.nvim-java',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
