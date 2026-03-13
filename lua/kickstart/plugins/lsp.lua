@@ -8,9 +8,15 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-      -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
+      {
+        'folke/lazydev.nvim',
+        ft = 'lua',
+        opts = {
+          library = {
+            { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+          },
+        },
+      },
       'b0o/schemastore.nvim',
     },
     config = function()
@@ -241,7 +247,6 @@ return {
                 library = {
                   [vim.fn.expand '$VIMRUNTIME/lua'] = true,
                   [vim.fn.expand '$VIMRUNTIME/lua/vim/lsp'] = true,
-                  [vim.fn.stdpath 'data' .. '/lazy/ui/nvchad_types'] = true,
                   [vim.fn.stdpath 'data' .. '/lazy/lazy.nvim/lua/lazy'] = true,
                 },
                 maxPreload = 100000,

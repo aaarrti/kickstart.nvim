@@ -46,7 +46,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
--- Displays which-key popup sooner
 vim.opt.timeoutlen = 400
 
 -- Configure how new splits should be opened
@@ -165,7 +164,6 @@ require('lazy').setup({
     opts = {},
   },
   -- require 'kickstart.plugins.mini',
-  -- require 'kickstart.plugins.which-key',
   require 'kickstart.plugins.telescope',
   require 'kickstart.plugins.nvim-cmp',
   require 'kickstart.plugins.theme',
